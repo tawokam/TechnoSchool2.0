@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TechnoSchool</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="assets/css/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.4.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.jfif" alt="">
+        <span class="d-none d-lg-block">TechnoSchool</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <div style="font-weight: bold;text-align: right;color: #4154f1;">
+          Session encour <span id="sessionencour">2022-2023</span>&nbsp;&nbsp;&nbsp;<!--  2023-2024-->
+        </div><!-- fin session encour -->
+    
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-calendar2-date"></i>
+          </a><!-- fin de l'icon calendrier pour effectuer des action sur les sessions -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              &nbsp;&nbsp;&nbsp;Traitement sur les sessions&nbsp;&nbsp;&nbsp;
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item" style="cursor:pointer" id="changsession">
+              <i class="bi bi-exclamation-circle text-primary"></i>
+              <div>
+                <h4 >Changer la session</h4>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item" style="cursor:pointer" id="newsession">
+              <i class="bi bi-calendar2-plus text-primary"></i>
+              <div>
+                <h4>Ajouter une session</h4>
+              </div>
+            </li>
+
+          </ul><!-- fin de la gestion des session -->
+
+        </li><!-- fin du sous menu session -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- fin icone de message -->
+
+
+        </li><!-- fin message -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- fin affiche photo et non de la personne connecté -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="monprofil" style="cursor:pointer">
+                <i class="bi bi-person"></i>
+                <span>Mon Profil</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="monprofil" style="cursor:pointer">
+                <i class="bi bi-person-plus"></i>
+                <span>Nouveau compte</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="paracompt" style="cursor:pointer">
+                <i class="bi bi-gear"></i>
+                <span>Paramètre</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="deconnect" style="cursor:pointer">
+                <i class="bi bi-question-circle"></i>
+                <span>Se déconnecter</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+          </ul><!-- fin gestion profil -->
+        </li><!-- fin menu profil -->
+
+      </ul>
+    </nav><!-- fin de la barre de navigation(petit menu horizontal) -->
+
+  </header><!-- fin de l'entete -->
+
+  <!-- ======= barrre ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-table"></i>
+          <span>Tableau de bord</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#parametre-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Paramètre</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="parametre-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a onclick="" style="cursor: pointer;">
+              <i class="bi bi-square" ></i><span>Etablissement</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetepjourcour()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Jours de cours</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="enteteheurecour()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Période de cour</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- fin block parametrage -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Gestion des élèves</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a onclick="enteteneweleve()" style="cursor: pointer;">
+              <i class="bi bi-square" ></i><span>Nouveau élève</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="enteteinscription()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Inscription</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetescolarite()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Scolarité</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="enteteNotes()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Notes évaluations</span>
+            </a>
+          </li>
+          <li>
+            <a onclick=" entetedisciplineeleve()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Discipline des élèves</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetebuletin()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Bulletins</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetecartescolarite()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Cartes scolaire</span>
+            </a>
+          </li>
+
+        </ul>
+      </li><!-- fin block gestion des eleves -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#bibliotheque-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journals"></i><span>Bibliothèque</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="bibliotheque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a onclick="entetesettingbibliotheque()" style="cursor: pointer;">
+              <i class="bi bi-square" ></i><span>Paramètre bibliothèque</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="enteteenreglivres()" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Enregistrement des livres</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="" style="cursor: pointer;">
+              <i class="bi bi-square"></i><span>Gestion des emprunts</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- fin block bibliotheque -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Structure</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a onclick="entetepagenewsession()" style="cursor:pointer">
+              <i class="bi bi-circle"></i><span>Nouvelle session</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetenewsection()" style="cursor:pointer">
+              <i class="bi bi-circle"></i><span>Nouvelle section</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetenewclasse()" style="cursor:pointer">
+              <i class="bi bi-circle"></i><span>Nouvelle classe</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetenewtypmatier()" style="cursor:pointer">
+              <i class="bi bi-circle"></i><span>Type de matières</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetenewmatiere()" style="cursor:pointer">
+              <i class="bi bi-circle"></i><span>Nouvelle matière</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- fin du block structure -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span >Gestion du personnel</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a onclick="entetepagenewfonctions()" style="cursor:pointer">
+              <i class="bi bi-circle"></i><span>Nouvelle fonction</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="entetepagenewemployer()" style="cursor: pointer;">
+              <i class="bi bi-circle"></i><span>Nouveau employer</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Discipline</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="enteteprogrameprof()" style="cursor: pointer;">
+              <i class="bi bi-circle"></i><span>Programmé un professeur</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="" style="cursor: pointer;">
+              <i class="bi bi-circle"></i><span>Programmé un rattrapage</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Paiement</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Congé</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Licenciment</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Promotion employé</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Gestion caisse</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Inscription</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Scolarité</a>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>ECharts</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Gestion des dépenses</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Type de dépenses</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Allouer un budget</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Nouvelle dépense</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#rapports-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Rapports</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="rapports-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Inscription</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Scolarité</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <i class="bi bi-circle"></i><span>Nouvelle dépense</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed">
+          <i class="bi bi-person"></i>
+          <span>Profil</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href=>
+          <i class="bi bi-question-circle"></i>
+          <span>Aide</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact.html">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-register.html">
+          <i class="bi bi-card-list"></i>
+          <span>Rapports</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Se déconnecter</span>
+        </a>
+      </li>
+
+    </ul><br>
+    <div >
+      <strong style="color: #012970;font-size: 15px;">Powered by TechnoSoft</strong><br>
+      <strong style="color: #012970;">Copyright 2023 <br> version 2.1</strong>
+    </div>
+  </aside><!-- fin menu horizontal-->
+
+  <main id="main" class="main">
+    <!-- Entete de la page(nom, bouton, nombre de ligne ) nouvelle fonction-->
+<div id="entetepagenewfonction">
+   
+</div>
+      <div class="row" id="corplogiciel" style="width:1500px">
+      
+      </div>
+
+
+  </main>
+<!--Block d'affichage du formulaire de creation d'une nouvelle fonction-->
+
+<div class="card" id="blockformnewfoncti">
+  <div class="card-body">
+    <div style="padding: 10px 0px;"><table style="width:96%;margin: auto;"><tr><td style="font-size: 20px;">Ajouter une nouvelle fonction</td><td style="text-align: right;"><i class="bi bi-x-lg" style="font-size: 20px;cursor:pointer" onclick="document.getElementById('blockformnewfoncti').style.display='none'"></i></td></tr></table></div>
+
+    <form class="row g-3 ">
+      <div class="col-md-12">
+        <label for="inputName5" class="form-label">Nom de la fonction(ex:Surveillant général)</label>
+        <input type="text" class="form-control" id="nomfonction" style="border:1px solid gray;">
+      </div>
+
+        <div class="alert alert-primary" role="alert">
+          Sélectionnez les responsabilités de la fonction.
+         </div>
+         <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="checkinscription">
+          <label class="form-check-label" for="checkinscription" style="cursor: pointer;">
+            Inscription
+        </div>
+        <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="checkscolarite">
+          <label class="form-check-label" for="checkscolarite" style="cursor: pointer;">
+            Scolarité
+        </div>
+        <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="checkgestprof">
+          <label class="form-check-label" for="checkgestprof" style="cursor: pointer;">
+            Gestion des enseignant
+        </div>
+        <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="checkdisciplineleve">
+          <label class="form-check-label" for="checkdisciplineleve" style="cursor: pointer;">
+             Discipline des élèves
+        </div>
+        <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="checkenseignent">
+          <label class="form-check-label" for="checkenseignent" style="cursor: pointer;">
+            Enseignement
+        </div>
+        <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="checkautre">
+          <label class="form-check-label" for="checkautre" style="cursor: pointer;">
+             Autres
+        </div>
+      </form>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" onclick="insertnewfonctions()">Enregistrer la fonction</button>
+      </div><br/>
+      <div id="resultinsertfonction"></div>
+
+  </div>
+</div>
+
+</div>
+ 
+<!--Block d'affichage du formulaire de creation d'une nouvelle fonction-->
+
+<div class="card " id="blockrecuinscriptdetail">
+  <div class="card-body">
+    <div style="padding: 10px 0px;"><table style="width:96%;margin: auto;"><tr><td style="font-size: 20px;"></td><td style="text-align: right;"><i class="bi bi-x-lg" style="font-size: 20px;cursor:pointer" onclick="document.getElementById('blockrecuinscriptdetail').style.display='none'"></i></td></tr></table></div>
+     <div id="contenurecudetail">
+
+     </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" onclick="imprime_bloc('','')">Imprimer le reçu</button>
+      </div><br/>
+      <div id="resultinsertfonction"></div>
+
+  </div>
+</div>
+
+</div>
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Programmation du spinner qui s'affiche pendant le chargement-->
+<div id="spinner" style="text-align:center;position:fixed;top:48%;left:47%;width: 100px;padding:10px;background:white;border-radius: 10px;" >
+  <div class="spinner-border m-10 text-primary" style="width: 3rem; height: 3rem;" role="status" >
+
+  </div>
+</div>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js" async></script>
+  <script src="assets/js/script.js" async></script>
+
+</body>
+
+</html>

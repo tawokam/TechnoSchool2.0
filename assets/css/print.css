@@ -1,0 +1,19 @@
+body{
+    background: none;
+    color:#FFF;
+}
+#monbulletion{
+    width:100%;
+}
+#blockimg{
+    display: none;
+}
+#tabtete{
+    display: none;
+}
+#bartravail{
+    display: none;
+    background: blue;
+    border: 10px solid red;
+}
+

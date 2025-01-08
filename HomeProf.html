@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TechnoSchool</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jfif" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="assets/css/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.4.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+ <style>
+    .card-title {
+  padding: 20px 0 15px 0;
+  font-size: 25px;
+  font-weight: 500;
+  color: #012970;
+  font-family: "Poppins", sans-serif;
+  vertical-align: middle;
+}
+.pagetitles{
+    background: url('./assets/img/bgIMG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}#profilImg{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.315);
+    vertical-align: middle;
+    padding: 2px;
+}
+@media(max-width:700px){
+    .pagetitles{
+    background: url('./assets/img/bgIMG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}  
+}
+@media(min-width:701px){
+    .pagetitles{
+    background: url('./assets/img/bgIMG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}  
+}
+ </style>
+</head>
+
+<body onload="userConnecte()" id="bodyTeacher">
+<!-- <h1 class="card-title" id="userName" style="margin-left: 20px;"></h1> -->
+ <div class="pagetitles">
+    <div >
+    <div style="display: flex;line-height: 40px;vertical-align: middle;"><img src="./assets/img/user.png" id="profilImg" alt="profil"><h1 class="card-title"  id="userName">utilisateur connecté</h1></div>
+</div><!-- fin de l'entete de page-->
+  <div id="bontonchoix">
+    <button type="button" style="margin-bottom:1% ;" class="btn btn-primary" onclick="classpournoteEspacProf()"><i class="bi bi-plus"></i> Notes</button>&nbsp;&nbsp;
+    <button type="button" style="margin-bottom:1% ;" class="btn btn-success" onclick="Mymploitemps()"><i class="bi bi-receipt-cutoff"></i> Emploi du temps</button>&nbsp;&nbsp;
+</div>
+    <br/>
+ </div>
+
+
+  <!-- Programmation du spinner qui s'affiche pendant le chargement-->
+<div id="spinner" style="text-align:center;position:fixed;top:48%;left:47%;width: 100px;padding:10px;background:white;border-radius: 10px;" >
+  <div class="spinner-border m-10 text-primary" style="width: 3rem; height: 3rem;" role="status" >
+
+  </div>
+</div>
+<div style="position: absolute;bottom: 10px; left: 20px;width: 200px;padding: 10px;">
+  <strong style="color: #012970;font-size: 15px;">Powered by TechnoSoft</strong>
+  <strong style="color: #012970;">Copyright 2023 <br> version 2.1</strong>
+</div>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js" async></script>
+  <!-- <script src="assets/js/script.js" async></script> -->
+  <script type="text/javascript">
+    function userConnecte(){
+        id = localStorage.getItem('user');
+        if(window.XMLHttpRequest){
+        //Mozilla, safari, IE7+...
+        xhr = new XMLHttpRequest();
+        }else if(window.ActiveXObject){
+            //IE 6 et anterieur
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.onreadystatechange = function (){ 
+        if(xhr.readyState == 1 && xhr.status == 200){
+        let spinner = document.getElementById('spinner').style.display="block";
+        }
+        if(xhr.readyState == 2 && xhr.status == 200){
+        let spinner = document.getElementById('spinner').style.display="block"; 
+        }
+        if(xhr.readyState == 3 && xhr.status == 200){
+        let spinner = document.getElementById('spinner').style.display="block";
+        }
+        if(xhr.readyState == 4 && xhr.status == 200){ 
+        let spinner = document.getElementById('spinner').style.display="none";
+        let corplogiciel = document.getElementById('userName');
+        corplogiciel.innerHTML = xhr.responseText;
+        }
+        }
+        xhr.open('GET','userConnecte.php?id='+encodeURI(id));
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send();
+    }
+    // emploi du temps d'un enseignant
+    function emploitemps(){
+        id = localStorage.getItem('user');
+        if(window.XMLHttpRequest){
+        //Mozilla, safari, IE7+...
+        xhr = new XMLHttpRequest();
+        }else if(window.ActiveXObject){
+            //IE 6 et anterieur
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.onreadystatechange = function (){ 
+        if(xhr.readyState == 1 && xhr.status == 200){
+        let spinner = document.getElementById('spinner').style.display="block";
+        }
+        if(xhr.readyState == 2 && xhr.status == 200){
+        let spinner = document.getElementById('spinner').style.display="block"; 
+        }
+        if(xhr.readyState == 3 && xhr.status == 200){
+        let spinner = document.getElementById('spinner').style.display="block";
+        }
+        if(xhr.readyState == 4 && xhr.status == 200){ 
+        let spinner = document.getElementById('spinner').style.display="none";
+        let corplogiciel = document.getElementById('userName');
+        corplogiciel.innerHTML = xhr.responseText;
+        }
+        }
+        xhr.open('GET','userConnecte.php?id='+encodeURI(id));
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send();
+    }
+
+        // emploi du temps de l'enseignant connecté
+    function Mymploitemps(){
+    id = localStorage.getItem('user');
+
+        window.location.href='monEmploiTemps.php?id='+id;
+    
+    }
+        // emploi du temps de l'enseignant connecté
+    function classpournoteEspacProf(){
+    id = localStorage.getItem('user');
+
+        window.location.href='classpournoteEspaceProf.php?id='+id;
+    
+    }
+  </script>
+</body>
+
+</html>
